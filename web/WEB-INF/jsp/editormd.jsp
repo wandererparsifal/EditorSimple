@@ -64,8 +64,8 @@
       height: 640,
       syncScrolling: "single",
       path: "../editormd/lib/",
-      htmlDecode : true,
-      htmlDecode : "style,script,iframe,sub,sup|on*"
+      htmlDecode: true,
+      htmlDecode: "style,script,iframe,sub,sup|on*"
     });
 
     /*

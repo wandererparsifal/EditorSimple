@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value = "/hello", method = RequestMethod.GET)
-public class EditerMdController {
+public class EditorMdController {
 
-    @RequestMapping(value = "/editermd", method = RequestMethod.GET)
+    @RequestMapping(value = "/editormd", method = RequestMethod.GET)
     public String printHello(ModelMap model) {
-        return "editermd";
+        return "editormd";
     }
 }
