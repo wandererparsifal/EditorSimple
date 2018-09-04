@@ -54,7 +54,7 @@
     </div>
 </div>
 <script src="${ctx}/editormd/js/jquery.min.js"></script>
-<script src="${ctx}/editormd/js/editormd.min.js"></script>
+<script src="${ctx}/editormd/js/editormd.js"></script>
 <script type="text/javascript">
   var testEditor;
 
