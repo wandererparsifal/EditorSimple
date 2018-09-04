@@ -21,7 +21,7 @@ public class HtmlListController {
         String filePath;
         for (File htmlFile : htmlFileDir.listFiles()) {
             filePath = htmlFile.getAbsolutePath();
-            htmlFiles.add(filePath);
+            htmlFiles.add("/resources/html/" + htmlFile.getName());
             System.out.println("path " + filePath);
         }
         session.setAttribute("htmlFiles", htmlFiles);
