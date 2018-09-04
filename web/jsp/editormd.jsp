@@ -65,7 +65,11 @@
       syncScrolling: "single",
       path: "../editormd/lib/",
       htmlDecode: true,
-      emoji: true
+      emoji: true,
+      imageUpload: true,
+      imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+      imageUploadURL: "${ctx}/uploadfile",
+      saveHTMLToTextarea: true
     });
 
     /*
