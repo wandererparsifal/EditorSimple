@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<c:set var="up_path"
-       value="http://${pageContext.request.localAddr}:${pageContext.request.localPort}"/>
 <html lang="zh">
 <head>
     <meta charset="utf-8"/>
