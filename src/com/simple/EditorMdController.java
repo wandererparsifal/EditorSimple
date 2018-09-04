@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/hello", method = RequestMethod.GET)
 public class EditorMdController {
 
     @RequestMapping(value = "/editormd", method = RequestMethod.GET)
-    public String printHello(ModelMap model) {
+    public String editormd(ModelMap model) {
         return "editormd";
     }
 }

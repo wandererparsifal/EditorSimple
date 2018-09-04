@@ -17,7 +17,7 @@ public class UploadController {
     private static final String UPLOAD_PATH = "/resources/upload/";
 
     @RequestMapping(value = "/uploadfile", method = RequestMethod.POST)
-    public void hello(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "editormd-image-file", required = false) MultipartFile multipartFile) {
+    public void upload(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "editormd-image-file", required = false) MultipartFile multipartFile) {
         try {
             String trueFileName = multipartFile.getOriginalFilename();
             String suffix = trueFileName.substring(trueFileName.lastIndexOf("."));
