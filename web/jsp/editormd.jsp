@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="${ctx}/editormd/css/style.css"/>
     <link rel="stylesheet" href="${ctx}/editormd/css/editormd.css"/>
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button-container-bo {
+            margin: 0 auto;
+        }
+
+        .submit-button {
+            width: 80px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
     <script src="${ctx}/editormd/js/jquery.min.js"></script>
     <script src="${ctx}/editormd/js/editormd.js"></script>
     <script type="text/javascript">
@@ -17,27 +34,35 @@
         var htmlContent = $("#htmlContent").val();
         console.log(mdContent);
         console.log(htmlContent);
-        $.ajax({
-          type: 'post',
-          url: "/submithtml",
-          data: { mdContent: mdContent, htmlContent: htmlContent },
-          success: function (data) {
-            console.log(data);
-            alert("发布成功");
-          },
-          error: function () {
-            alert("发布失败");
-          }
-        })
+        if (htmlContent !== "") {
+          $.ajax({
+            type: 'post',
+            url: "/submithtml",
+            data: { mdContent: mdContent, htmlContent: htmlContent },
+            success: function (data) {
+              console.log(data);
+              alert("发布成功");
+            },
+            error: function () {
+              alert("发布失败");
+            }
+          })
+        } else {
+          alert("请输入内容");
+        }
       }
     </script>
 </head>
 <body>
+<div class="button-container">
+    <div class="button-container-bo">
+        <button type="button" class="submit-button" id="submit" onclick="submitHtml()">submit</button>
+        <a href="/htmllist">
+            <button type="button" class="submit-button">list</button>
+        </a>
+    </div>
+</div>
 <div id="layout">
-    <header>
-        <h1>Simple example</h1>
-    </header>
-    <button type="button" id="submit" onclick="submitHtml()">submit</button>
     <div id="test-editormd">
         <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc" id="mdContent"></textarea>
         <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
