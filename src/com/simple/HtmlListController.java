@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 @Controller
 public class HtmlListController {
@@ -24,6 +25,7 @@ public class HtmlListController {
             htmlFiles.add("/resources/html/" + htmlFile.getName());
             System.out.println("path " + filePath);
         }
+        Collections.sort(htmlFiles);
         session.setAttribute("htmlFiles", htmlFiles);
         return "htmllist";
     }
