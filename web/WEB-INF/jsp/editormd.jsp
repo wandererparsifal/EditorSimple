@@ -65,7 +65,8 @@
       syncScrolling: "single",
       path: "../editormd/lib/",
       htmlDecode: true,
-      htmlDecode: "style,script,iframe,sub,sup|on*"
+      htmlDecode: "style,script,iframe,sub,sup|on*",
+      emoji: true
     });
 
     /*
