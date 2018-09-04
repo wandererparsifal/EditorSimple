@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:forEach var="htmlFile" items="<%=htmlFiles %>">
-    <a href="${htmlFile}">${htmlFile}</a>
+    <a href="showhtml?htmlFile=${htmlFile}">${htmlFile}</a>
     <p/>
 </c:forEach>
 </body>
