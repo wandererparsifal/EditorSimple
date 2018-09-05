@@ -7,11 +7,28 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        .editor-button {
+            width: 80px;
+            margin-bottom: 1%;
+        }
+
+        .list-container {
+            margin-top: 2%;
+            margin-left: 2%;
+        }
+    </style>
 </head>
 <body>
-<c:forEach var="htmlFile" items="<%=htmlFiles %>">
-    <a href="showhtml?htmlFile=${htmlFile}">${htmlFile}</a>
+<div class="list-container">
+    <a href="/editormd">
+        <button type="button" class="editor-button">editor</button>
+    </a>
     <p/>
-</c:forEach>
+    <c:forEach var="htmlFile" items="<%=htmlFiles %>">
+        <a href="showhtml?htmlFile=${htmlFile}">${htmlFile}</a>
+        <p/>
+    </c:forEach>
+</div>
 </body>
 </html>
