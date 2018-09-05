@@ -18,6 +18,9 @@ public class HtmlListController {
         HttpSession session = request.getSession();
         String htmlPath = request.getSession().getServletContext().getRealPath("/resources/html/");
         File htmlFileDir = new File(htmlPath);
+        if (!htmlFileDir.exists()) {
+            htmlFileDir.mkdirs();
+        }
         ArrayList<String> htmlFiles = new ArrayList<>();
         String filePath;
         for (File htmlFile : htmlFileDir.listFiles()) {
