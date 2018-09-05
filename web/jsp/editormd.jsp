@@ -78,12 +78,16 @@
       height: 640,
       syncScrolling: "single",
       path: "../editormd/lib/",
-      htmlDecode: true,
-      emoji: true,
       imageUpload: true,
       imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
       imageUploadURL: "${ctx}/uploadfile",
-      saveHTMLToTextarea: true
+      saveHTMLToTextarea: true,
+      htmlDecode: true,
+      emoji: true,
+      taskList: true,
+      flowChart: true, // 默认不解析
+      sequenceDiagram: true, // 默认不解析
+      codeFold: true
     });
   });
 </script>
