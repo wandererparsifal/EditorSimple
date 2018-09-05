@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <%@ page import="java.util.ArrayList" %>
 <%
     ArrayList htmlFiles = (ArrayList) session.getAttribute("htmlFiles");
@@ -21,12 +22,12 @@
 </head>
 <body>
 <div class="list-container">
-    <a href="/editormd">
+    <a href="${ctx}/editormd">
         <button type="button" class="editor-button">editor</button>
     </a>
     <p/>
     <c:forEach var="htmlFile" items="<%=htmlFiles %>">
-        <a href="showhtml?htmlFile=${htmlFile}">${htmlFile}</a>
+        <a href="${ctx}/showhtml?htmlFile=${htmlFile}">${htmlFile}</a>
         <p/>
     </c:forEach>
 </div>

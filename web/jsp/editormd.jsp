@@ -37,7 +37,7 @@
         if (htmlContent !== "") {
           $.ajax({
             type: 'post',
-            url: "/submithtml",
+            url: "${ctx}/submithtml",
             data: { mdContent: mdContent, htmlContent: htmlContent },
             success: function (data) {
               console.log(data);
@@ -57,7 +57,7 @@
 <div class="button-container">
     <div class="button-container-bo">
         <button type="button" class="submit-button" id="submit" onclick="submitHtml()">submit</button>
-        <a href="/htmllist">
+        <a href="${ctx}/htmllist">
             <button type="button" class="submit-button">list</button>
         </a>
     </div>
@@ -77,7 +77,7 @@
       width: "90%",
       height: 640,
       syncScrolling: "single",
-      path: "../editormd/lib/",
+      path: "${ctx}/editormd/lib/",
       imageUpload: true,
       imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
       imageUploadURL: "${ctx}/uploadfile",
