@@ -3,12 +3,18 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
+    <meta charset="utf-8"/>
     <title>Title</title>
     <link rel="stylesheet" href="${ctx}/editormd/css/editormd.preview.min.css"/>
     <link rel="stylesheet" href="${ctx}/editormd/css/editormd.css"/>
     <script src="${ctx}/editormd/js/jquery.min.js"></script>
     <script src="${ctx}/editormd/lib/marked.min.js"></script>
     <script src="${ctx}/editormd/lib/prettify.min.js"></script>
+    <script src="${ctx}/editormd/lib/raphael.min.js"></script>
+    <script src="${ctx}/editormd/lib/underscore.min.js"></script>
+    <script src="${ctx}/editormd/lib/sequence-diagram.min.js"></script>
+    <script src="${ctx}/editormd/lib/flowchart.min.js"></script>
+    <script src="${ctx}/editormd/lib/jquery.flowchart.min.js"></script>
     <script src="${ctx}/editormd/js/editormd.min.js"></script>
 </head>
 <body>
