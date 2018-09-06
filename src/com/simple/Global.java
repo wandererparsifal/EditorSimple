@@ -10,13 +10,20 @@ public class Global {
 
     public static String HTML_PATH;
 
+    public static String IMAGE_DIR;
+
     @Value("#{configProperties['upload.path']}")
     public void setUploadPath(String path) {
         Global.UPLOAD_PATH = path;
     }
 
-    @Value("#{configProperties['upload.html']}")
+    @Value("#{configProperties['html.path']}")
     public void setHtmlPath(String path) {
         Global.HTML_PATH = path;
+    }
+
+    @Value("#{configProperties['image.directory']}")
+    public void setImageDir(String dir) {
+        Global.IMAGE_DIR = dir;
     }
 }

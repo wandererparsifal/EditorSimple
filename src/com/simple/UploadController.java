@@ -14,17 +14,14 @@ import java.io.IOException;
 @Controller
 public class UploadController {
 
-    private static final String UPLOAD_PATH = "/resources/upload/";
-
     @RequestMapping(value = "/uploadfile", method = RequestMethod.POST)
     public void upload(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "editormd-image-file", required = false) MultipartFile multipartFile) {
         try {
             String trueFileName = multipartFile.getOriginalFilename();
             String suffix = trueFileName.substring(trueFileName.lastIndexOf("."));
             String fileName = System.currentTimeMillis() + suffix;
-            String path = request.getSession().getServletContext().getRealPath(UPLOAD_PATH);
-            System.out.println(path);
-            File targetFile = new File(path, fileName);
+            System.out.println(Global.UPLOAD_PATH);
+            File targetFile = new File(Global.UPLOAD_PATH, fileName);
             if (!targetFile.exists()) {
                 targetFile.mkdirs();
             }
@@ -34,7 +31,7 @@ public class UploadController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            response.getWriter().write("{\"success\": 1, \"message\":\"upload success\",\"url\":\"" + UPLOAD_PATH + targetFile.getName() + "\"}");
+            response.getWriter().write("{\"success\": 1, \"message\":\"upload success\",\"url\":\"" + Global.IMAGE_DIR + targetFile.getName() + "\"}");
         } catch (Exception e) {
             e.printStackTrace();
             try {
