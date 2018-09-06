@@ -16,8 +16,7 @@ public class HtmlListController {
     @RequestMapping(value = "/htmllist", method = RequestMethod.GET)
     public String list(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        String htmlPath = request.getSession().getServletContext().getRealPath("/resources/html/");
-        File htmlFileDir = new File(htmlPath);
+        File htmlFileDir = new File(Global.HTML_PATH);
         if (!htmlFileDir.exists()) {
             htmlFileDir.mkdirs();
         }
@@ -25,7 +24,7 @@ public class HtmlListController {
         String filePath;
         for (File htmlFile : htmlFileDir.listFiles()) {
             filePath = htmlFile.getAbsolutePath();
-            htmlFiles.add("/resources/html/" + htmlFile.getName());
+            htmlFiles.add(htmlFile.getName());
             System.out.println("path " + filePath);
         }
         Collections.sort(htmlFiles);

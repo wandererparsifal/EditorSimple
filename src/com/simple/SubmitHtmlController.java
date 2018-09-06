@@ -17,15 +17,14 @@ public class SubmitHtmlController {
         System.out.println("mdContent " + request.getParameter("mdContent"));
         System.out.println("htmlContent " + request.getParameter("htmlContent"));
         // htmlContent 不带 css
-        String htmlDir = request.getSession().getServletContext().getRealPath("/resources/html/");
-        File dir = new File(htmlDir);
+        File dir = new File(Global.HTML_PATH);
         if (!dir.exists()) {
             dir.mkdirs();
         }
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         try {
-            saveText(request.getParameter("htmlContent"), htmlDir + File.separator + System.currentTimeMillis() + ".txt");
+            saveText(request.getParameter("htmlContent"), Global.HTML_PATH + System.currentTimeMillis() + ".txt");
             PrintWriter writer = response.getWriter();
             response.getWriter().write("{\"success\":0}");
             writer.flush();

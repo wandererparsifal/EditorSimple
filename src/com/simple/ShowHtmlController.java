@@ -18,7 +18,7 @@ public class ShowHtmlController {
     @RequestMapping(value = "/showhtml", method = RequestMethod.GET)
     public String show(HttpServletRequest request, ModelMap model) {
         String htmlFilePath = request.getParameter("htmlFile");
-        String path = request.getSession().getServletContext().getRealPath(htmlFilePath);
+        String path = Global.HTML_PATH + htmlFilePath;
         System.out.println("htmlFile " + path);
         String htmlContent = "null";
         try {
